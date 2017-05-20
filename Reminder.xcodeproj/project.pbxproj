@@ -12,6 +12,29 @@
 		6B174B851EA77F55002857BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B174B831EA77F55002857BF /* Main.storyboard */; };
 		6B174B871EA77F55002857BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B174B861EA77F55002857BF /* Assets.xcassets */; };
 		6B174B8A1EA77F55002857BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B174B881EA77F55002857BF /* LaunchScreen.storyboard */; };
+		6B503C4C1EA8952E0061E3D1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B503C481EA8952E0061E3D1 /* Bolts.framework */; };
+		6B503C4D1EA8952E0061E3D1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B503C491EA8952E0061E3D1 /* FBSDKCoreKit.framework */; };
+		6B503C4E1EA8952E0061E3D1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B503C4A1EA8952E0061E3D1 /* FBSDKLoginKit.framework */; };
+		6B503C4F1EA8952E0061E3D1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B503C4B1EA8952E0061E3D1 /* FBSDKShareKit.framework */; };
+		6B503C521EA8A13A0061E3D1 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B503C511EA8A13A0061E3D1 /* Facebook.m */; };
+		6B60F3181EC8532000268D79 /* WishTextCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60F3171EC8532000268D79 /* WishTextCellTableViewCell.swift */; };
+		6B8946F91EC75EF90006B72B /* BirthdayNotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8946F81EC75EF90006B72B /* BirthdayNotificationDelegate.swift */; };
+		6B8946FB1EC765F80006B72B /* SendWishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8946FA1EC765F80006B72B /* SendWishViewController.swift */; };
+		6B8954401EBB209800E99A06 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B89543F1EBB209800E99A06 /* Helper.swift */; };
+		6B8C2A901EB3469A00239DE0 /* BirthdayTabelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8C2A8F1EB3469A00239DE0 /* BirthdayTabelViewCell.swift */; };
+		6BB4FDC21EAE0E22008BB314 /* BirthdaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB4FDC11EAE0E22008BB314 /* BirthdaysViewController.swift */; };
+		6BBC54ED1ECFEDB6006F4464 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBC54EC1ECFEDB6006F4464 /* SettingsTableViewController.swift */; };
+		6BC15B1C1EB9D26700F5FA47 /* ImportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC15B1B1EB9D26700F5FA47 /* ImportTableViewController.swift */; };
+		6BC5E39C1EBD8D150082AACD /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5E39B1EBD8D150082AACD /* UserDetailViewController.swift */; };
+		6BC8DA6A1EC9C58C0004766C /* WishPictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC8DA691EC9C58C0004766C /* WishPictureTableViewCell.swift */; };
+		6BE003531EB7344900F9C7D3 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BE003511EB7344900F9C7D3 /* DataModel.xcdatamodeld */; };
+		6BE003561EB7367500F9C7D3 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE003541EB7367500F9C7D3 /* User+CoreDataClass.swift */; };
+		6BE003571EB7367500F9C7D3 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE003551EB7367500F9C7D3 /* User+CoreDataProperties.swift */; };
+		6BE003591EB75DFE00F9C7D3 /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE003581EB75DFE00F9C7D3 /* MyUser.swift */; };
+		6BF22FB81ECDBD5E00359C08 /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF22FB71ECDBD5E00359C08 /* DimmingPresentationController.swift */; };
+		6BF327E21ECB01F200EB3F1D /* OpenSans-CondLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BF327E11ECB01F200EB3F1D /* OpenSans-CondLight.ttf */; };
+		6BF327E41ECB021600EB3F1D /* HYPE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BF327E31ECB021600EB3F1D /* HYPE.ttf */; };
+		6BF327E61ECB03AA00EB3F1D /* OpenSans-CondBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BF327E51ECB03AA00EB3F1D /* OpenSans-CondBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +45,30 @@
 		6B174B861EA77F55002857BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B174B891EA77F55002857BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B174B8B1EA77F55002857BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B503C481EA8952E0061E3D1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		6B503C491EA8952E0061E3D1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		6B503C4A1EA8952E0061E3D1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		6B503C4B1EA8952E0061E3D1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		6B503C501EA8A1390061E3D1 /* Reminder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Reminder-Bridging-Header.h"; sourceTree = "<group>"; };
+		6B503C511EA8A13A0061E3D1 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		6B60F3171EC8532000268D79 /* WishTextCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishTextCellTableViewCell.swift; sourceTree = "<group>"; };
+		6B8946F81EC75EF90006B72B /* BirthdayNotificationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayNotificationDelegate.swift; sourceTree = "<group>"; };
+		6B8946FA1EC765F80006B72B /* SendWishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendWishViewController.swift; sourceTree = "<group>"; };
+		6B89543F1EBB209800E99A06 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		6B8C2A8F1EB3469A00239DE0 /* BirthdayTabelViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdayTabelViewCell.swift; sourceTree = "<group>"; };
+		6BB4FDC11EAE0E22008BB314 /* BirthdaysViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirthdaysViewController.swift; sourceTree = "<group>"; };
+		6BBC54EC1ECFEDB6006F4464 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		6BC15B1B1EB9D26700F5FA47 /* ImportTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImportTableViewController.swift; sourceTree = "<group>"; };
+		6BC5E39B1EBD8D150082AACD /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		6BC8DA691EC9C58C0004766C /* WishPictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishPictureTableViewCell.swift; sourceTree = "<group>"; };
+		6BE003521EB7344900F9C7D3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		6BE003541EB7367500F9C7D3 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6BE003551EB7367500F9C7D3 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6BE003581EB75DFE00F9C7D3 /* MyUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
+		6BF22FB71ECDBD5E00359C08 /* DimmingPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		6BF327E11ECB01F200EB3F1D /* OpenSans-CondLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondLight.ttf"; sourceTree = "<group>"; };
+		6BF327E31ECB021600EB3F1D /* HYPE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HYPE.ttf; sourceTree = "<group>"; };
+		6BF327E51ECB03AA00EB3F1D /* OpenSans-CondBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-CondBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B503C4F1EA8952E0061E3D1 /* FBSDKShareKit.framework in Frameworks */,
+				6B503C4C1EA8952E0061E3D1 /* Bolts.framework in Frameworks */,
+				6B503C4D1EA8952E0061E3D1 /* FBSDKCoreKit.framework in Frameworks */,
+				6B503C4E1EA8952E0061E3D1 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,8 +89,10 @@
 		6B174B731EA77F55002857BF = {
 			isa = PBXGroup;
 			children = (
-				6B174B7E1EA77F55002857BF /* Reminder */,
 				6B174B7D1EA77F55002857BF /* Products */,
+				6B174B7E1EA77F55002857BF /* Reminder */,
+				6BE003541EB7367500F9C7D3 /* User+CoreDataClass.swift */,
+				6BE003551EB7367500F9C7D3 /* User+CoreDataProperties.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +107,44 @@
 		6B174B7E1EA77F55002857BF /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
+				6BF327E01ECB01A000EB3F1D /* Font */,
 				6B174B7F1EA77F55002857BF /* AppDelegate.swift */,
-				6B174B811EA77F55002857BF /* ViewController.swift */,
-				6B174B831EA77F55002857BF /* Main.storyboard */,
 				6B174B861EA77F55002857BF /* Assets.xcassets */,
-				6B174B881EA77F55002857BF /* LaunchScreen.storyboard */,
+				6BB4FDC11EAE0E22008BB314 /* BirthdaysViewController.swift */,
+				6B89543F1EBB209800E99A06 /* Helper.swift */,
+				6B8C2A8F1EB3469A00239DE0 /* BirthdayTabelViewCell.swift */,
+				6B503C481EA8952E0061E3D1 /* Bolts.framework */,
+				6BE003511EB7344900F9C7D3 /* DataModel.xcdatamodeld */,
+				6B503C511EA8A13A0061E3D1 /* Facebook.m */,
+				6B503C491EA8952E0061E3D1 /* FBSDKCoreKit.framework */,
+				6B503C4A1EA8952E0061E3D1 /* FBSDKLoginKit.framework */,
+				6B503C4B1EA8952E0061E3D1 /* FBSDKShareKit.framework */,
+				6BC15B1B1EB9D26700F5FA47 /* ImportTableViewController.swift */,
 				6B174B8B1EA77F55002857BF /* Info.plist */,
+				6B174B881EA77F55002857BF /* LaunchScreen.storyboard */,
+				6B174B831EA77F55002857BF /* Main.storyboard */,
+				6BE003581EB75DFE00F9C7D3 /* MyUser.swift */,
+				6B503C501EA8A1390061E3D1 /* Reminder-Bridging-Header.h */,
+				6B174B811EA77F55002857BF /* ViewController.swift */,
+				6BC5E39B1EBD8D150082AACD /* UserDetailViewController.swift */,
+				6B8946F81EC75EF90006B72B /* BirthdayNotificationDelegate.swift */,
+				6B8946FA1EC765F80006B72B /* SendWishViewController.swift */,
+				6B60F3171EC8532000268D79 /* WishTextCellTableViewCell.swift */,
+				6BC8DA691EC9C58C0004766C /* WishPictureTableViewCell.swift */,
+				6BF22FB71ECDBD5E00359C08 /* DimmingPresentationController.swift */,
+				6BBC54EC1ECFEDB6006F4464 /* SettingsTableViewController.swift */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		6BF327E01ECB01A000EB3F1D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				6BF327E31ECB021600EB3F1D /* HYPE.ttf */,
+				6BF327E51ECB03AA00EB3F1D /* OpenSans-CondBold.ttf */,
+				6BF327E11ECB01F200EB3F1D /* OpenSans-CondLight.ttf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +179,7 @@
 				TargetAttributes = {
 					6B174B7B1EA77F55002857BF = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,7 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B174B8A1EA77F55002857BF /* LaunchScreen.storyboard in Resources */,
+				6BF327E41ECB021600EB3F1D /* HYPE.ttf in Resources */,
 				6B174B871EA77F55002857BF /* Assets.xcassets in Resources */,
+				6BF327E21ECB01F200EB3F1D /* OpenSans-CondLight.ttf in Resources */,
+				6BF327E61ECB03AA00EB3F1D /* OpenSans-CondBold.ttf in Resources */,
 				6B174B851EA77F55002857BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +223,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B8954401EBB209800E99A06 /* Helper.swift in Sources */,
 				6B174B821EA77F55002857BF /* ViewController.swift in Sources */,
+				6BC5E39C1EBD8D150082AACD /* UserDetailViewController.swift in Sources */,
+				6BF22FB81ECDBD5E00359C08 /* DimmingPresentationController.swift in Sources */,
+				6BC8DA6A1EC9C58C0004766C /* WishPictureTableViewCell.swift in Sources */,
+				6BB4FDC21EAE0E22008BB314 /* BirthdaysViewController.swift in Sources */,
+				6BE003571EB7367500F9C7D3 /* User+CoreDataProperties.swift in Sources */,
+				6B60F3181EC8532000268D79 /* WishTextCellTableViewCell.swift in Sources */,
+				6BBC54ED1ECFEDB6006F4464 /* SettingsTableViewController.swift in Sources */,
+				6B8946F91EC75EF90006B72B /* BirthdayNotificationDelegate.swift in Sources */,
+				6B503C521EA8A13A0061E3D1 /* Facebook.m in Sources */,
+				6B8946FB1EC765F80006B72B /* SendWishViewController.swift in Sources */,
+				6BC15B1C1EB9D26700F5FA47 /* ImportTableViewController.swift in Sources */,
+				6BE003531EB7344900F9C7D3 /* DataModel.xcdatamodeld in Sources */,
+				6B8C2A901EB3469A00239DE0 /* BirthdayTabelViewCell.swift in Sources */,
 				6B174B801EA77F55002857BF /* AppDelegate.swift in Sources */,
+				6BE003591EB75DFE00F9C7D3 /* MyUser.swift in Sources */,
+				6BE003561EB7367500F9C7D3 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,10 +361,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Reminder",
+				);
 				INFOPLIST_FILE = Reminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.titut.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reminder/Reminder-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,10 +381,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Reminder",
+				);
 				INFOPLIST_FILE = Reminder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.titut.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Reminder/Reminder-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,8 +414,22 @@
 				6B174B901EA77F55002857BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6BE003511EB7344900F9C7D3 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6BE003521EB7344900F9C7D3 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 6BE003521EB7344900F9C7D3 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6B174B741EA77F55002857BF /* Project object */;
 }
