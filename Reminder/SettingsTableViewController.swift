@@ -29,7 +29,6 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         firstReminderTextField.delegate = self
         secondReminderTextField.delegate = self
         
-        
         fetchConfigFromDefault()
     }
     
@@ -38,15 +37,17 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(_ tableView: UITableView,
+                   willDisplayHeaderView view: UIView,
+                   forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 14)
+    }
+    
     func fetchConfigFromDefault(){
         reminderDate1 = defaults.object(forKey:"ReminderDate1") as? Date
         reminderDate2 = defaults.object(forKey:"ReminderDate2") as? Date
         let noOfDays = defaults.object(forKey:"DaysBefore") as? Int
-        
-        print("fetchConfigFromDefault")
-        print("reminderDate1 \(reminderDate1)")
-        print("reminderDate2 \(reminderDate2)")
-        print("noOfDays \(noOfDays)")
         
         if reminderDate1 != nil {
             firstReminderTextField.text = Helper.getFormatedTime(date: reminderDate1!)
@@ -68,9 +69,6 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveChanges(_ sender: Any) {
-        print("reminder 1 >> \(Date())")
-        print("reminder 2 >> \(reminderDate2)")
-        
         if reminderDate1 != nil {
             defaults.set(reminderDate1, forKey: "ReminderDate1")
         }
@@ -81,7 +79,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         
         defaults.set(Int(daysBefore.text!), forKey: "DaysBefore")
         
-        print("save DONE!!")
+        Helper.showAlertMessage(viewController: self, titleStr: "Success", messageStr: "Your changes saved successfully")
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

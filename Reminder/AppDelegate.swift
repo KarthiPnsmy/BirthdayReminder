@@ -27,13 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = window!.rootViewController as? UITabBarController
         if let tabBarViewControllers = tabBarController?.viewControllers {
             let navigationController = tabBarViewControllers[0] as? UINavigationController
+            
+            //navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "Futura", size: 20)!]
+            
             let birthdayViewController = navigationController?.topViewController as? BirthdaysViewController
             birthdayViewController?.managedObjectContext = managedObjectContext
         }
         
         // Changing the tint colour of the tab bar icons
         UITabBar.appearance().tintColor = Helper.getBorderColor()
-        
+
         let navigationBarImage: UIImage = UIImage(named: "background")!
         UINavigationBar.appearance().setBackgroundImage(navigationBarImage, for: .default)
         UINavigationBar.appearance().tintColor = UIColor.white

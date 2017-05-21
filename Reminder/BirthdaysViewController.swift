@@ -32,8 +32,7 @@ class BirthdaysViewController: UIViewController {
         birthdayTabelView.estimatedRowHeight = 100
         birthdayTabelView.rowHeight = UITableViewAutomaticDimension
         
-        print("database path => \(applicationDocumentsDirectory)")
-        
+        //print("database path => \(applicationDocumentsDirectory)")
         loadBirthdayFromDB()
     }
     
@@ -76,17 +75,13 @@ class BirthdaysViewController: UIViewController {
 
         for user in users {
             if prevHeader == "" {
-                //print("adding to userObjects --> \(user.first_name!) \(user.headMonthVal!)")
                 userObjects.append(user)
             } else {
                 if prevHeader == user.headMonthVal {
-                    //print("adding to userObjects --> \(user.first_name!) \(user.headMonthVal!)")
                     userObjects.append(user)
                 } else {
-                    //print("month wrapping objectArray--> \(userObjects.count) \(prevHeader)")
                     objectArray.append(Objects(sectionName: prevHeader, sectionObjects: userObjects))
                     userObjects = [User] ()
-                    //print("adding to userObjects --> \(user.first_name!) \(user.headMonthVal!)")
                     userObjects.append(user)
                 }
             }
@@ -119,7 +114,6 @@ class BirthdaysViewController: UIViewController {
         }
         
         actionSheet.addAction(contactAction)
-        //actionSheet.addAction(calenderAction)
         actionSheet.addAction(manualAction)
         actionSheet.addAction(cancelAction)
         
@@ -174,6 +168,13 @@ extension BirthdaysViewController:UITableViewDelegate {
         selectedUser = objectArray[indexPath.section].sectionObjects[indexPath.row]
         self.performSegue(withIdentifier: "showUserDetail", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                            willDisplayHeaderView view: UIView,
+                            forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 14)
     }
 }
 

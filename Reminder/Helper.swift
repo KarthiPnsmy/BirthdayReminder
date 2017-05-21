@@ -138,8 +138,6 @@ class Helper{
         } catch {
             print(error)
         }
-        
-        //print("reminderKey \(userObj.notification_id!) saved for \(userObj.first_name!)")
     }
     
     static func getReminder2FireDate(userObj:User) -> Date {
@@ -297,7 +295,7 @@ class Helper{
          */
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
-        return dateFormatter.string(from: date) //08/10/2016 01:42:22 AM
+        return dateFormatter.string(from: date)
     }
     
     static func getBorderColor() -> UIColor {

@@ -21,27 +21,12 @@ class ImportTableViewController: UITableViewController {
     var isImportInProcess = false
     var importType = "CONTACT"
     let notificationCenter = UNUserNotificationCenter.current()
-    //let center = UNUserNotificationCenter.current()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.title = "Import from Contact"
-        print(applicationDocumentsDirectory)
-        
-        
-//        let wishAction = UNNotificationAction(identifier: "Wish",
-//                                              title: "Wish", options: [])
-//        let category = UNNotificationCategory(identifier: "ReminderWishCategory",
-//                                              actions: [wishAction],
-//                                              intentIdentifiers: [], options: [])
-//        notificationCenter.setNotificationCategories([category])
-//        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-//            // Enable or disable features based on authorization.
-//        }
     }
-    
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -69,8 +54,6 @@ class ImportTableViewController: UITableViewController {
                     try contactStore.enumerateContacts(with: CNContactFetchRequest(keysToFetch: keys as! [CNKeyDescriptor])) { (contact, pointer) -> Void in
        
                         if let birthday = contact.birthday {
-                            //print("\(contact.givenName) birthday >> \("\(birthday.year!)-\(birthday.month!)-\(birthday.day!)")")
- 
                             let myUser: MyUser = MyUser()
                             myUser.first_name = contact.givenName
                             myUser.last_name = contact.familyName
@@ -82,9 +65,7 @@ class ImportTableViewController: UITableViewController {
                             }
                             
                             if contact.imageDataAvailable {
-                                //let image = UIImage(data: contact.imageData!)
                                 myUser.image_data = contact.imageData!
-                                //print("image_data avail for \(contact.givenName)")
                             }
                             
                             self.myUsers.append(myUser)
@@ -157,16 +138,6 @@ class ImportTableViewController: UITableViewController {
                 } catch {
                     print("Error writing file: \(error) for \(user.first_name)")
                 }
-                
-                /*
-                if let data = UIImageJPEGRepresentation(image, 0.5) {
-                    do {
-                        try data.write(to: location.photoURL, options: .atomic)
-                    } catch {
-                        print("Error writing file: \(error)")
-                    }
-                }
-                 */
             }
             
             do {
@@ -190,8 +161,7 @@ class ImportTableViewController: UITableViewController {
         let entity = User.entity()
         fetchRequest.entity = entity
         fetchRequest.predicate = NSPredicate(format: "import_type = %@", "\(importType)")
-        //let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
-        
+
         do {
             let fechedUsers = try managedObjectContext!.fetch(fetchRequest)
             for user in fechedUsers {
@@ -240,6 +210,13 @@ class ImportTableViewController: UITableViewController {
         return myUsers.count
     }
 
+    override func tableView(_ tableView: UITableView,
+                   willDisplayHeaderView view: UIView,
+                   forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "Futura", size: 14)
+        header.textLabel?.textColor = UIColor.lightGray
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BirthdayCell") as! BirthdayTabelViewCell
