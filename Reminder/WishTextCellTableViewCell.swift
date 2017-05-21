@@ -11,11 +11,15 @@ import UIKit
 class WishTextCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var textTemplate: UILabel!
-
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        containerView.layer.borderWidth = 0.8
+        containerView.layer.borderColor = Helper.getBorderColor().cgColor
+        containerView.layer.cornerRadius = 4.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

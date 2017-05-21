@@ -29,13 +29,12 @@ class BirthdaysViewController: UIViewController {
         birthdayTabelView.dataSource = self
         birthdayTabelView.delegate = self
         
+        birthdayTabelView.estimatedRowHeight = 100
+        birthdayTabelView.rowHeight = UITableViewAutomaticDimension
+        
         print("database path => \(applicationDocumentsDirectory)")
         
         loadBirthdayFromDB()
-        /*
-        NSFetchedResultsController<User>.deleteCache(withName: "User")
-        performFetch()
-         */
     }
     
     
@@ -48,42 +47,6 @@ class BirthdaysViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*
-    lazy var fetchedResultsController: NSFetchedResultsController<User> = {
-        let fetchRequest = NSFetchRequest<User>()
-        
-        let entity = User.entity()
-        fetchRequest.entity = entity
-        
-        let sortDescriptor1 = NSSortDescriptor(key: "dob_month", ascending: true)
-        let sortDescriptor2 = NSSortDescriptor(key: "dob_date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
-
-        
-        let fetchedResultsController = NSFetchedResultsController(
-            fetchRequest: fetchRequest,
-            managedObjectContext: self.managedObjectContext!,
-            sectionNameKeyPath: "headMonthVal",
-            cacheName: "User")
-        
-        fetchedResultsController.delegate = self
-        return fetchedResultsController
-    }()
-    
-    deinit {
-        fetchedResultsController.delegate = nil
-    }
-    
-    func performFetch() {
-        do {
-            try fetchedResultsController.performFetch()
-        } catch {
-            //fatalCoreDataError(error)
-            print("fatalCoreDataError \(error)")
-        }
-    }
- */
     
     func loadBirthdayFromDB(){
         objectArray = [Objects]()
@@ -147,11 +110,6 @@ class BirthdaysViewController: UIViewController {
             self.performSegue(withIdentifier: "import", sender: self)
         }
         
-        let calenderAction = UIAlertAction(title: "Calender", style: .default) { (UIAlertAction) in
-
-            
-        }
-        
         let manualAction = UIAlertAction(title: "Manual", style: .default) { (UIAlertAction) in
             self.performSegue(withIdentifier: "addNewUser", sender: self)
         }
@@ -161,7 +119,7 @@ class BirthdaysViewController: UIViewController {
         }
         
         actionSheet.addAction(contactAction)
-        actionSheet.addAction(calenderAction)
+        //actionSheet.addAction(calenderAction)
         actionSheet.addAction(manualAction)
         actionSheet.addAction(cancelAction)
         
@@ -213,9 +171,9 @@ extension BirthdaysViewController:UITableViewDataSource {
 
 extension BirthdaysViewController:UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print("You tapped cell number \(indexPath.row).")
         selectedUser = objectArray[indexPath.section].sectionObjects[indexPath.row]
         self.performSegue(withIdentifier: "showUserDetail", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -243,61 +201,6 @@ extension BirthdaysViewController {
         cell.checkBox.isHidden = true
     }
 }
-
-/*
-extension BirthdaysViewController: NSFetchedResultsControllerDelegate {
-    
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("*** controllerWillChangeContent")
-        birthdayTabelView.beginUpdates()
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        switch type {
-        case .insert:
-            print("*** NSFetchedResultsChangeInsert (object)")
-            birthdayTabelView.insertRows(at: [newIndexPath!], with: .fade)
-            
-        case .delete:
-            print("*** NSFetchedResultsChangeDelete (object)")
-            birthdayTabelView.deleteRows(at: [indexPath!], with: .fade)
-            
-        case .update:
-            print("*** NSFetchedResultsChangeUpdate (object)")
-            if let cell = birthdayTabelView.cellForRow(at: indexPath!) as? BirthdayTabelViewCell {
-                let user = controller.object(at: indexPath!) as! User
-                configureCell(for: user, cell: cell)
-            }
-            
-        case .move:
-            print("*** NSFetchedResultsChangeMove (object)")
-            birthdayTabelView.deleteRows(at: [indexPath!], with: .fade)
-            birthdayTabelView.insertRows(at: [newIndexPath!], with: .fade)
-        }
-    }
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        switch type {
-        case .insert:
-            print("*** NSFetchedResultsChangeInsert (section)")
-            birthdayTabelView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
-        case .delete:
-            print("*** NSFetchedResultsChangeDelete (section)")
-            birthdayTabelView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
-        case .update:
-            print("*** NSFetchedResultsChangeUpdate (section)")
-        case .move:
-            print("*** NSFetchedResultsChangeMove (section)")
-        }
-    }
-    
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        print("*** controllerDidChangeContent")
-        birthdayTabelView.endUpdates()
-    }
-}
- */
 
 
 

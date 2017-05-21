@@ -27,19 +27,32 @@ class SendWishViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textTableView.separatorStyle = .none
+        imageTableView.separatorStyle = .none
+        self.navigationItem.rightBarButtonItem?.title = ""
+
+        segmentControl.tintColor = Helper.getBorderColor()
         imageTableView.isHidden = true
         textMessages = Helper.getTextTemplateMessages()
         
+        pictureMessages.append(UIImage(named: "birthday6")!)
         pictureMessages.append(UIImage(named: "birthday1")!)
         pictureMessages.append(UIImage(named: "birthday2")!)
         pictureMessages.append(UIImage(named: "birthday4")!)
         pictureMessages.append(UIImage(named: "birthday5")!)
+        pictureMessages.append(UIImage(named: "birthday7")!)
+        pictureMessages.append(UIImage(named: "birthday8")!)
+        pictureMessages.append(UIImage(named: "birthday9")!)
+        pictureMessages.append(UIImage(named: "birthday11")!)
+        pictureMessages.append(UIImage(named: "birthday10")!)
 
         textTableView.dataSource = self
         textTableView.estimatedRowHeight = 110
         textTableView.rowHeight = UITableViewAutomaticDimension
         
         imageTableView.dataSource = self
+        textTableView.delegate = self
+        imageTableView.delegate = self
 
     }
 
@@ -73,15 +86,14 @@ class SendWishViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func shareItem(itmeToShare: Any){
+        let activityViewController = UIActivityViewController(activityItems: [itmeToShare], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        activityViewController.excludedActivityTypes = [UIActivityType.airDrop]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
-    */
 
 }
 
@@ -113,6 +125,21 @@ extension SendWishViewController:UITableViewDataSource {
     }
     
 }
+
+extension SendWishViewController:UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == textTableView {
+            print("selected text index = \(textMessages[indexPath.row])")
+            shareItem(itmeToShare: textMessages[indexPath.row])
+        } else {
+            print("selected pic index = \(pictureMessages[indexPath.row])")
+            shareItem(itmeToShare: pictureMessages[indexPath.row])
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+
 
 extension SendWishViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController,

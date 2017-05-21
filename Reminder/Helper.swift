@@ -300,6 +300,11 @@ class Helper{
         return dateFormatter.string(from: date) //08/10/2016 01:42:22 AM
     }
     
+    static func getBorderColor() -> UIColor {
+        let borderColor: UIColor = UIColor( red: CGFloat(252/255.0), green: CGFloat(131/255.0), blue: CGFloat(127/255.0), alpha: CGFloat(1.0))
+        return borderColor
+    }
+    
     static func getTextTemplateMessages() -> [String] {
         var textMessages = [String]()
         textMessages.append("Happy Birthday!!! I hope this is the begining of your greatest, most wonderful year ever!")

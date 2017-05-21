@@ -20,9 +20,11 @@ class BirthdayTabelViewCell: UITableViewCell {
         
         diplayImage.layer.cornerRadius = diplayImage.frame.size.width/2
         diplayImage.clipsToBounds = true
-        
+
         diplayImage.layer.borderWidth = 3.0;
-        diplayImage.layer.borderColor = UIColor.orange.cgColor
+        diplayImage.layer.borderColor = Helper.getBorderColor().cgColor
+        
+ 
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

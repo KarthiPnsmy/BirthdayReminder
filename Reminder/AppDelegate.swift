@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             birthdayViewController?.managedObjectContext = managedObjectContext
         }
         
+        // Changing the tint colour of the tab bar icons
+        UITabBar.appearance().tintColor = Helper.getBorderColor()
+        
         let navigationBarImage: UIImage = UIImage(named: "background")!
         UINavigationBar.appearance().setBackgroundImage(navigationBarImage, for: .default)
         UINavigationBar.appearance().tintColor = UIColor.white
