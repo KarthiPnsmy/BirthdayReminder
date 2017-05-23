@@ -73,7 +73,7 @@ class Helper{
 
     static func getDateStringFromDate(_ date: Date) -> String! {
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
+        dateFormatter.locale = Locale(identifier: "en_US")
         dateFormatter.dateStyle = DateFormatter.Style.medium
         let dateString = dateFormatter.string(from: date)
         
@@ -208,7 +208,7 @@ class Helper{
         let random2 = Helper.randomString(length: 6)
         notificationIndenfier = random2
         
-        let request2 = UNNotificationRequest(identifier: random2, content: content2, trigger: Helper.getFakeTrigger())
+        let request2 = UNNotificationRequest(identifier: random2, content: content2, trigger: trigger2)
         notificationCenter.add(request2) { (error : Error?) in
             if let theError = error {
                 print(theError.localizedDescription)

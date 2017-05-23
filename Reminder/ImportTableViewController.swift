@@ -58,9 +58,16 @@ class ImportTableViewController: UITableViewController {
                             myUser.first_name = contact.givenName
                             myUser.last_name = contact.familyName
                             if contact.birthday != nil {
-                                myUser.dob_date = (birthday.day)!
-                                myUser.dob_month = (birthday.month)!
-                                myUser.dob_year = (birthday.year)!
+                                if let birthDay = birthday.day {
+                                    myUser.dob_date = birthDay
+                                }
+                                if let birthMonth = birthday.month {
+                                    myUser.dob_month = birthMonth
+                                }
+                                
+                                if let birthYear = birthday.year {
+                                    myUser.dob_year = birthYear
+                                } 
                                 myUser.dob = birthday.date
                             }
                             
@@ -99,15 +106,6 @@ class ImportTableViewController: UITableViewController {
             selectedMyUsers.append(checkedUser)
         }
         self.importTabelView.reloadData()
-    }
-
-    func getDateStringFromDate(_ date: Date) -> String! {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale.current
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        let dateString = dateFormatter.string(from: date)
-        
-        return dateString
     }
     
     @IBAction func doImport(_ sender: UIButton) {
@@ -224,7 +222,13 @@ class ImportTableViewController: UITableViewController {
         let user = myUsers[indexPath.row]
         cell.nameLabel.text = "\(user.first_name!) \(user.last_name!)"
         if let birthday = user.dob {
-            cell.dobLabel.text = getDateStringFromDate(birthday)
+            let formattedDate: String = Helper.getDateStringFromDate(user.dob!)
+            if user.dob_year == 0 {
+                var displayComponents = formattedDate.components(separatedBy: ",")
+                cell.dobLabel.text = displayComponents[0]
+            } else {
+                cell.dobLabel.text = formattedDate
+            }
         }
         
         if user.image_data != nil {

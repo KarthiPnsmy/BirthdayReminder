@@ -69,22 +69,6 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate {
         
         userImage.layer.borderWidth = 3.0;
         userImage.layer.borderColor = UIColor.orange.cgColor
-        /*
-        //send wish button
-        sendWishButton.layer.borderWidth = 0.8
-        sendWishButton.layer.borderColor = UIColor.orange.cgColor
-        sendWishButton.layer.cornerRadius = 4.0
-        
-        //delete button
-        deleteButton.layer.borderWidth = 0.8
-        deleteButton.layer.borderColor = UIColor.red.cgColor
-        deleteButton.layer.cornerRadius = 4.0
-        
-        //save wish button
-        saveButton.layer.borderWidth = 0.8
-        saveButton.layer.borderColor = UIColor.orange.cgColor
-        saveButton.layer.cornerRadius = 4.0
-         */
     }
     
     func loadUserDetailToView(){
@@ -92,7 +76,15 @@ class UserDetailViewController: UIViewController, UITextFieldDelegate {
         if let user = userBirthdayToEdit {
             self.title = user.first_name!
             userNameLabel.text = "\(user.first_name!) \(user.last_name!)"
-            userDobLabel.text = Helper.getDateStringFromDate(user.dob!)
+            let formattedDate: String = Helper.getDateStringFromDate(user.dob!)
+
+            if user.dob_year == 0 {
+                var displayComponents = formattedDate.components(separatedBy: ",")
+                userDobLabel.text = displayComponents[0]
+            } else {
+                userDobLabel.text = formattedDate
+            }
+            
             date = user.dob!
             if user.hasPhoto {
                 userImage.image = user.photoImage
